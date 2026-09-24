@@ -1,23 +1,67 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <meta name="theme-color" content="#ff4fd8">
+    <meta name="theme-color"
+          content="#ff28c8">
 
-    <title>LamaGoddess ♡</title>
+    <title>LamaGoddess ♡ Sweet but Deadly</title>
 
     <meta name="description"
-          content="Welcome to the wonderfully chaotic world of LamaGoddess. Cute, colorful and potentially deadly.">
+          content="LamaGoddess – süß, chaotisch, glitzernd und möglicherweise tödlich.">
+
+
+    <!-- =========================================================
+         FAVICON
+         ========================================================= -->
+
+    <link rel="icon"
+          type="image/png"
+          href="./favicon.png">
+
+    <link rel="shortcut icon"
+          type="image/png"
+          href="./favicon.png">
+
+    <link rel="apple-touch-icon"
+          href="./favicon.png">
+
 
     <style>
 
         /* =========================================================
-           LAMAGODDESS
-           KAWAII × Y2K × DECORA × CUTE BUT DEADLY
+           VARIABLES
+           ========================================================= */
+
+        :root {
+
+            --pink: #ff28c8;
+            --hotpink: #ff008c;
+            --lightpink: #ff9ce8;
+
+            --purple: #9d3cff;
+            --darkpurple: #5e177f;
+
+            --cyan: #42efff;
+            --blue: #62a7ff;
+
+            --yellow: #fff45c;
+
+            --white: #ffffff;
+
+            --dark: #16051e;
+
+        }
+
+
+        /* =========================================================
+           RESET
            ========================================================= */
 
         * {
@@ -26,12 +70,16 @@
             padding: 0;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
+
             min-height: 100vh;
+
             overflow-x: hidden;
 
             font-family:
@@ -39,167 +87,255 @@
                 Arial,
                 sans-serif;
 
-            color: #ffffff;
+            color: var(--white);
 
-            background:
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(255, 255, 255, .45),
-                    transparent 18%
-                ),
 
-                radial-gradient(
-                    circle at 80% 30%,
-                    rgba(0, 255, 255, .25),
-                    transparent 22%
-                ),
+            /* =====================================================
+               DEIN GITHUB BACKGROUND
+               ===================================================== */
+
+            background-image:
 
                 linear-gradient(
-                    135deg,
-                    #ff65dd,
-                    #ff8be8,
-                    #bd7dff,
-                    #64dcff
-                );
+                    rgba(255, 0, 179, 0.05),
+                    rgba(37, 0, 54, 0.17)
+                ),
 
-            background-attachment: fixed;
+                url("./hackground.webp");
+
+
+            background-size: cover;
+
+            background-position:
+                center center;
+
+            background-repeat:
+                no-repeat;
+
+            background-attachment:
+                fixed;
+
         }
 
 
         /* =========================================================
-           CUSTOM SCROLLBAR
-           ========================================================= */
-
-        ::-webkit-scrollbar {
-            width: 13px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #ffb4ec;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            border: 3px solid #ffffff;
-            border-radius: 20px;
-
-            background:
-                linear-gradient(
-                    #ff1493,
-                    #b73cff,
-                    #36e6ff
-                );
-        }
-
-
-        /* =========================================================
-           BACKGROUND GRID
+           NEON OVERLAY
            ========================================================= */
 
         body::before {
+
             content: "";
 
             position: fixed;
+
             inset: 0;
 
             pointer-events: none;
 
-            opacity: .16;
+            z-index: -1;
 
-            background-image:
-                linear-gradient(
-                    rgba(255,255,255,.5) 1px,
-                    transparent 1px
+
+            background:
+
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(255, 0, 187, .35),
+                    transparent 28%
                 ),
 
-                linear-gradient(
-                    90deg,
-                    rgba(255,255,255,.5) 1px,
-                    transparent 1px
+                radial-gradient(
+                    circle at 85% 25%,
+                    rgba(57, 239, 255, .30),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 50% 85%,
+                    rgba(169, 64, 255, .30),
+                    transparent 35%
                 );
 
-            background-size: 30px 30px;
-
-            z-index: -2;
         }
 
 
         /* =========================================================
-           FLOATING BACKGROUND DECORATION
+           SCROLLBAR
+           ========================================================= */
+
+        ::-webkit-scrollbar {
+
+            width: 14px;
+
+        }
+
+
+        ::-webkit-scrollbar-track {
+
+            background:
+                #28052f;
+
+        }
+
+
+        ::-webkit-scrollbar-thumb {
+
+            border:
+                3px solid white;
+
+            border-radius:
+                30px;
+
+            background:
+
+                linear-gradient(
+                    var(--pink),
+                    var(--purple),
+                    var(--cyan)
+                );
+
+            box-shadow:
+
+                0 0 10px var(--pink),
+
+                0 0 20px var(--purple);
+
+        }
+
+
+        /* =========================================================
+           BACKGROUND FLOATING STICKERS
            ========================================================= */
 
         .background-decoration {
+
             position: fixed;
+
             inset: 0;
 
             overflow: hidden;
 
             pointer-events: none;
 
-            z-index: -1;
+            z-index: 0;
+
         }
+
 
         .floating {
+
             position: absolute;
 
-            font-size: clamp(25px, 4vw, 55px);
+            font-size:
+                clamp(25px, 4vw, 55px);
 
             filter:
-                drop-shadow(0 0 7px #fff)
-                drop-shadow(0 0 10px #ff4fd8);
+
+                drop-shadow(
+                    0 0 6px white
+                )
+
+                drop-shadow(
+                    0 0 15px var(--pink)
+                )
+
+                drop-shadow(
+                    0 0 25px var(--purple)
+                );
+
 
             animation:
-                floatAround 7s ease-in-out infinite;
+
+                floatingSticker
+                6s
+                ease-in-out
+                infinite;
+
         }
+
 
         .floating:nth-child(1) {
+
             top: 8%;
-            left: 4%;
+            left: 3%;
+
         }
+
 
         .floating:nth-child(2) {
-            top: 18%;
-            right: 6%;
-            animation-delay: -2s;
+
+            top: 17%;
+            right: 4%;
+
+            animation-delay:
+                -1s;
+
         }
+
 
         .floating:nth-child(3) {
-            top: 52%;
+
+            top: 42%;
             left: 2%;
-            animation-delay: -4s;
+
+            animation-delay:
+                -3s;
+
         }
+
 
         .floating:nth-child(4) {
-            top: 70%;
-            right: 4%;
-            animation-delay: -1s;
+
+            top: 62%;
+            right: 3%;
+
+            animation-delay:
+                -4s;
+
         }
+
 
         .floating:nth-child(5) {
-            top: 88%;
-            left: 8%;
-            animation-delay: -3s;
+
+            top: 80%;
+            left: 5%;
+
+            animation-delay:
+                -2s;
+
         }
+
 
         .floating:nth-child(6) {
-            top: 40%;
-            right: 2%;
-            animation-delay: -5s;
+
+            top: 88%;
+            right: 5%;
+
+            animation-delay:
+                -5s;
+
         }
 
-        @keyframes floatAround {
+
+        @keyframes floatingSticker {
 
             0%,
             100% {
+
                 transform:
                     translateY(0)
-                    rotate(-7deg);
+                    rotate(-8deg);
+
             }
 
+
             50% {
+
                 transform:
                     translateY(-25px)
                     rotate(8deg);
+
             }
+
         }
 
 
@@ -208,253 +344,570 @@
            ========================================================= */
 
         #enter-screen {
+
             position: fixed;
+
             inset: 0;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 25px;
 
             z-index: 99999;
 
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 25px;
+
+
             background:
+
                 radial-gradient(
-                    circle,
-                    rgba(255, 158, 231, .96),
-                    rgba(255, 52, 178, .97) 50%,
-                    rgba(94, 23, 129, .98)
+                    circle at center,
+                    rgba(255, 91, 218, .87),
+                    rgba(139, 43, 191, .92) 45%,
+                    rgba(22, 2, 31, .98)
                 );
 
+
+            backdrop-filter:
+                blur(13px);
+
+
             transition:
-                opacity .7s ease,
-                visibility .7s ease;
+
+                opacity .8s ease,
+
+                visibility .8s ease;
+
         }
+
 
         #enter-screen.hidden {
+
             opacity: 0;
+
             visibility: hidden;
+
             pointer-events: none;
+
         }
 
+
         .enter-box {
-            width: min(600px, 100%);
 
             position: relative;
 
-            text-align: center;
+            width:
+                min(650px, 100%);
 
             padding:
-                50px
+
+                55px
                 30px
                 45px;
 
-            border:
-                5px solid #ffffff;
 
-            border-radius: 45px;
+            text-align: center;
+
+
+            border:
+
+                4px
+                solid
+                white;
+
+
+            border-radius:
+                50px;
+
 
             background:
+
                 linear-gradient(
                     145deg,
-                    rgba(255,255,255,.35),
-                    rgba(255,110,220,.25)
+                    rgba(255,255,255,.25),
+                    rgba(255,42,196,.25),
+                    rgba(98,66,255,.22)
                 );
 
+
             box-shadow:
-                0 0 0 8px #ff50d4,
-                0 0 0 12px #ffffff,
-                0 0 35px #ffffff,
-                0 0 80px #ff3bc4;
 
-            backdrop-filter: blur(15px);
+                0 0 0 7px var(--pink),
+
+                0 0 0 11px white,
+
+                0 0 25px white,
+
+                0 0 55px var(--pink),
+
+                0 0 100px var(--purple),
+
+                inset 0 0 40px rgba(255,255,255,.35);
+
+
+            backdrop-filter:
+                blur(18px);
+
         }
 
-        .enter-stickers {
-            font-size: 30px;
 
-            margin-bottom: 15px;
+        .enter-symbols {
 
-            letter-spacing: 8px;
+            font-size:
+                28px;
+
+            letter-spacing:
+                7px;
+
+            margin-bottom:
+                10px;
+
+
+            text-shadow:
+
+                0 0 7px white,
+
+                0 0 15px var(--pink);
+
         }
+
 
         .enter-llama {
-            font-size: 100px;
 
             display: block;
 
-            margin-bottom: 5px;
+            font-size:
+                clamp(90px, 20vw, 140px);
 
-            animation:
-                llamaBounce 2s ease-in-out infinite;
+            margin-bottom:
+                5px;
+
 
             filter:
-                drop-shadow(0 0 15px white);
+
+                drop-shadow(
+                    0 0 8px white
+                )
+
+                drop-shadow(
+                    0 0 20px var(--pink)
+                )
+
+                drop-shadow(
+                    0 0 35px var(--cyan)
+                );
+
+
+            animation:
+
+                llamaBounce
+                2.2s
+                ease-in-out
+                infinite;
+
         }
+
 
         @keyframes llamaBounce {
 
             0%,
             100% {
+
                 transform:
                     translateY(0)
                     rotate(-3deg);
+
             }
+
 
             50% {
+
                 transform:
-                    translateY(-10px)
+                    translateY(-12px)
                     rotate(3deg);
+
             }
+
         }
 
+
         .enter-box h1 {
-            font-size:
-                clamp(42px, 9vw, 80px);
-
-            line-height: .95;
-
-            margin-bottom: 15px;
 
             font-family:
                 Georgia,
                 serif;
 
-            font-style: italic;
+            font-style:
+                italic;
 
-            color: white;
+            font-size:
+                clamp(48px, 10vw, 85px);
+
+            line-height:
+                .95;
+
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #fff36c,
+                    #ff86e4,
+                    #73f6ff,
+                    #ffffff
+                );
+
+
+            background-size:
+                300%;
+
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color:
+                transparent;
+
+
+            animation:
+
+                rainbowText
+                4s
+                linear
+                infinite;
+
+
+            filter:
+
+                drop-shadow(
+                    3px 3px 0 #e0009b
+                )
+
+                drop-shadow(
+                    6px 6px 0 #7a32cf
+                )
+
+                drop-shadow(
+                    0 0 8px white
+                )
+
+                drop-shadow(
+                    0 0 22px var(--pink)
+                );
+
+        }
+
+
+        @keyframes rainbowText {
+
+            from {
+
+                background-position:
+                    0%;
+
+            }
+
+
+            to {
+
+                background-position:
+                    300%;
+
+            }
+
+        }
+
+
+        .enter-tagline {
+
+            margin-top:
+                18px;
+
+            margin-bottom:
+                28px;
+
+            font-size:
+                13px;
+
+            font-weight:
+                900;
+
+            letter-spacing:
+                4px;
+
+            text-transform:
+                uppercase;
+
 
             text-shadow:
-                3px 3px 0 #ff159f,
-                6px 6px 0 #9637ff,
-                0 0 15px #fff;
+
+                0 0 8px white,
+
+                0 0 15px var(--pink);
+
         }
 
-        .enter-subtitle {
-            font-size: 15px;
-
-            letter-spacing: 4px;
-
-            text-transform: uppercase;
-
-            margin-bottom: 30px;
-
-            color: #ffffff;
-        }
 
         .enter-button {
-            border: 4px solid white;
 
-            border-radius: 999px;
+            border:
+
+                3px
+                solid
+                white;
+
+
+            border-radius:
+                999px;
+
 
             padding:
+
                 17px
                 35px;
 
-            cursor: pointer;
 
-            color: white;
+            color:
+                white;
 
-            font-weight: 900;
 
-            font-size: 17px;
+            cursor:
+                pointer;
 
-            letter-spacing: 2px;
 
-            text-transform: uppercase;
+            font-size:
+                16px;
+
+
+            font-weight:
+                900;
+
+
+            letter-spacing:
+                2px;
+
 
             background:
+
                 linear-gradient(
                     90deg,
-                    #ff1493,
-                    #ff67dc,
-                    #a94dff,
-                    #31dfff
+                    #ff008c,
+                    #ff4bd8,
+                    #9f45ff,
+                    #42efff,
+                    #ff4bd8
                 );
 
+
+            background-size:
+                300%;
+
+
+            animation:
+
+                buttonGlow
+                4s
+                linear
+                infinite;
+
+
             box-shadow:
-                0 7px 0 #a81888,
-                0 0 25px #fff;
+
+                0 7px 0 #9c176f,
+
+                0 0 15px white,
+
+                0 0 30px var(--pink),
+
+                0 0 50px var(--purple);
+
 
             transition:
+
                 transform .2s,
+
                 box-shadow .2s;
+
         }
+
 
         .enter-button:hover {
+
             transform:
+
                 translateY(-4px)
-                scale(1.04);
+                scale(1.05);
+
 
             box-shadow:
-                0 11px 0 #a81888,
-                0 0 40px #ffffff;
+
+                0 10px 0 #9c176f,
+
+                0 0 20px white,
+
+                0 0 45px var(--pink),
+
+                0 0 80px var(--cyan);
+
         }
 
+
+        @keyframes buttonGlow {
+
+            from {
+
+                background-position:
+                    0%;
+
+            }
+
+
+            to {
+
+                background-position:
+                    300%;
+
+            }
+
+        }
+
+
         .enter-note {
-            margin-top: 22px;
 
-            font-size: 12px;
+            margin-top:
+                23px;
 
-            opacity: .85;
+            font-size:
+                11px;
 
-            letter-spacing: 1px;
+            letter-spacing:
+                2px;
+
+            opacity:
+                .9;
+
         }
 
 
         /* =========================================================
-           PAGE
+           MAIN PAGE
            ========================================================= */
 
         .page {
-            width:
-                min(1100px, calc(100% - 30px));
 
-            margin: auto;
+            position: relative;
+
+            z-index: 2;
+
+            width:
+                min(
+                    1100px,
+                    calc(100% - 30px)
+                );
+
+            margin:
+                auto;
 
             padding:
-                35px 0
+
+                35px
+                0
                 80px;
+
         }
 
 
         /* =========================================================
-           TOP MINI BAR
+           TOP BAR
            ========================================================= */
 
         .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
 
-            margin-bottom: 20px;
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            gap:
+                15px;
+
+
+            margin-bottom:
+                25px;
+
 
             padding:
-                10px
-                18px;
+
+                11px
+                20px;
+
 
             border:
-                3px solid white;
 
-            border-radius: 999px;
+                3px
+                solid
+                white;
+
+
+            border-radius:
+                999px;
+
 
             background:
-                rgba(255, 60, 185, .55);
+
+                linear-gradient(
+                    90deg,
+                    rgba(255, 0, 157, .72),
+                    rgba(135, 54, 218, .72),
+                    rgba(39, 205, 239, .55)
+                );
+
+
+            backdrop-filter:
+                blur(16px);
+
 
             box-shadow:
-                0 0 15px #fff;
 
-            font-size: 12px;
+                0 0 10px white,
 
-            font-weight: bold;
+                0 0 25px var(--pink),
 
-            letter-spacing: 1px;
+                0 0 45px var(--purple);
+
+
+            font-size:
+                11px;
+
+            font-weight:
+                bold;
+
+            letter-spacing:
+                2px;
+
         }
 
+
         .online {
-            color: #c6ffca;
+
+            color:
+                #baffc3;
+
+            text-shadow:
+
+                0 0 5px #58ff77,
+
+                0 0 12px #58ff77;
+
         }
 
 
@@ -463,274 +916,514 @@
            ========================================================= */
 
         .hero {
-            position: relative;
 
-            overflow: hidden;
+            position:
+                relative;
 
-            text-align: center;
+            overflow:
+                hidden;
+
+
+            text-align:
+                center;
+
 
             padding:
+
                 70px
                 25px
                 60px;
 
-            border:
-                5px solid #ffffff;
 
-            border-radius: 55px;
+            border:
+
+                4px
+                solid
+                white;
+
+
+            border-radius:
+                55px;
+
 
             background:
+
                 linear-gradient(
                     145deg,
-                    rgba(255, 94, 207, .72),
-                    rgba(130, 88, 255, .55),
-                    rgba(66, 219, 255, .45)
+                    rgba(255, 34, 185, .62),
+                    rgba(143, 55, 216, .52),
+                    rgba(52, 220, 255, .38)
                 );
 
+
+            backdrop-filter:
+                blur(12px);
+
+
             box-shadow:
-                0 0 0 7px #ff4dcf,
-                0 0 0 11px white,
-                0 0 40px rgba(255,255,255,.9),
-                0 0 100px rgba(255,32,190,.6);
+
+                0 0 0 6px var(--pink),
+
+                0 0 0 10px white,
+
+                0 0 25px white,
+
+                0 0 55px var(--pink),
+
+                0 0 95px rgba(153, 61, 255, .8),
+
+                inset 0 0 45px rgba(255,255,255,.25);
+
         }
+
 
         .hero::before {
-            content: "♡ ✦ ★ ♡ ✧ ★ ♡ ✦ ★ ♡ ✧ ★ ♡";
 
-            position: absolute;
+            content:
+                "♡ ✦ ★ ♡ ✧ 🦙 ✧ ♡ ★ ✦ ♡";
 
-            top: 15px;
-            left: 0;
+            position:
+                absolute;
 
-            width: 100%;
-
-            color: rgba(255,255,255,.75);
-
-            font-size: 20px;
-
-            letter-spacing: 8px;
-        }
-
-        .hero-label {
-            display: inline-block;
-
-            margin-bottom: 15px;
-
-            padding:
-                7px
+            top:
                 15px;
 
-            border:
-                2px solid white;
+            left:
+                0;
 
-            border-radius: 999px;
+            width:
+                100%;
+
+
+            color:
+                white;
+
+
+            font-size:
+                18px;
+
+
+            letter-spacing:
+                8px;
+
+
+            text-shadow:
+
+                0 0 8px white,
+
+                0 0 15px var(--pink),
+
+                0 0 25px var(--cyan);
+
+        }
+
+
+        .hero-label {
+
+            display:
+                inline-block;
+
+
+            margin-bottom:
+                20px;
+
+
+            padding:
+
+                8px
+                17px;
+
+
+            border:
+
+                2px
+                solid
+                white;
+
+
+            border-radius:
+                999px;
+
 
             background:
                 rgba(255, 0, 138, .55);
 
-            font-size: 11px;
 
-            font-weight: bold;
+            box-shadow:
 
-            letter-spacing: 3px;
+                0 0 10px white,
+
+                0 0 20px var(--pink);
+
+
+            font-size:
+                10px;
+
+
+            font-weight:
+                bold;
+
+
+            letter-spacing:
+                3px;
+
         }
 
+
         .hero h1 {
+
             font-family:
                 Georgia,
                 serif;
 
-            font-style: italic;
+            font-style:
+                italic;
+
 
             font-size:
                 clamp(55px, 11vw, 125px);
 
-            line-height: .9;
 
-            margin-bottom: 8px;
+            line-height:
+                .9;
+
+
+            margin-bottom:
+                10px;
+
 
             background:
+
                 linear-gradient(
                     90deg,
                     #ffffff,
-                    #ffec52,
-                    #ff77e1,
-                    #6ff8ff,
+                    #fff16a,
+                    #ff76dc,
+                    #62efff,
                     #ffffff
                 );
 
-            background-size: 300%;
 
-            -webkit-background-clip: text;
-            background-clip: text;
+            background-size:
+                300%;
 
-            color: transparent;
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+
+            color:
+                transparent;
+
 
             animation:
-                rainbowText 5s linear infinite;
+
+                rainbowText
+                5s
+                linear
+                infinite;
+
 
             filter:
-                drop-shadow(3px 4px 0 #e71aa5)
-                drop-shadow(6px 7px 0 #7b39d9)
-                drop-shadow(0 0 10px #ffffff);
+
+                drop-shadow(
+                    3px 4px 0 #e71aa5
+                )
+
+                drop-shadow(
+                    6px 7px 0 #7b39d9
+                )
+
+                drop-shadow(
+                    0 0 8px white
+                )
+
+                drop-shadow(
+                    0 0 20px var(--pink)
+                )
+
+                drop-shadow(
+                    0 0 35px var(--cyan)
+                );
+
         }
 
-        @keyframes rainbowText {
-
-            from {
-                background-position: 0%;
-            }
-
-            to {
-                background-position: 300%;
-            }
-        }
 
         .hero-tagline {
+
+            margin-bottom:
+                30px;
+
+
             font-size:
                 clamp(16px, 3vw, 25px);
 
-            font-weight: 900;
 
-            letter-spacing: 5px;
+            font-weight:
+                900;
 
-            text-transform: uppercase;
+
+            letter-spacing:
+                5px;
+
+
+            text-transform:
+                uppercase;
+
+
+            color:
+                white;
+
 
             text-shadow:
-                2px 2px 0 #c11891;
 
-            margin-bottom: 30px;
+                2px 2px 0 #c11891,
+
+                0 0 10px white,
+
+                0 0 20px var(--pink);
+
         }
 
 
         /* =========================================================
-           LLAMA HEART
+           CENTRAL LLAMA
            ========================================================= */
 
-        .llama-heart {
-            width:
-                min(360px, 85vw);
+        .llama-orb {
 
-            aspect-ratio: 1;
+            position:
+                relative;
+
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+
+            width:
+                min(350px, 80vw);
+
+
+            aspect-ratio:
+                1;
+
 
             margin:
-                10px auto
+
+                0 auto
                 35px;
 
-            position: relative;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
-        .heart-shape {
-            position: absolute;
 
-            width: 72%;
-            height: 72%;
+        .llama-orb::before {
 
-            transform:
-                rotate(45deg);
-
-            border:
-                8px solid white;
-
-            border-radius:
-                20px
-                35px
-                20px
-                35px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #ff3ec5,
-                    #ff98e9,
-                    #7cefff
-                );
-
-            box-shadow:
-                0 0 0 7px #ff47cf,
-                0 0 0 11px white,
-                0 0 35px #fff;
-        }
-
-        .heart-shape::before,
-        .heart-shape::after {
             content: "";
 
-            position: absolute;
+            position:
+                absolute;
 
-            width: 100%;
-            height: 100%;
 
-            border-radius: 50%;
+            width:
+                75%;
 
-            background: inherit;
-        }
+            height:
+                75%;
 
-        .heart-shape::before {
-            left: -50%;
-        }
 
-        .heart-shape::after {
-            top: -50%;
-        }
+            border-radius:
+                50%;
 
-        .llama-center {
-            position: relative;
 
-            z-index: 2;
+            border:
 
-            font-size:
-                clamp(100px, 20vw, 170px);
+                6px
+                solid
+                white;
 
-            filter:
-                drop-shadow(0 0 12px white);
+
+            background:
+
+                radial-gradient(
+                    circle,
+                    rgba(255,255,255,.55),
+                    rgba(255,64,204,.65),
+                    rgba(111,67,255,.55),
+                    rgba(57,230,255,.35)
+                );
+
+
+            box-shadow:
+
+                0 0 0 7px var(--pink),
+
+                0 0 0 11px white,
+
+                0 0 30px white,
+
+                0 0 60px var(--pink),
+
+                0 0 100px var(--cyan),
+
+                inset 0 0 50px white;
+
 
             animation:
-                llamaBounce 2.5s ease-in-out infinite;
+
+                orbPulse
+                2.5s
+                ease-in-out
+                infinite;
+
         }
 
+
+        @keyframes orbPulse {
+
+            0%,
+            100% {
+
+                transform:
+                    scale(1);
+
+            }
+
+
+            50% {
+
+                transform:
+                    scale(1.04);
+
+            }
+
+        }
+
+
+        .llama-main {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+
+            font-size:
+                clamp(110px, 22vw, 180px);
+
+
+            filter:
+
+                drop-shadow(
+                    0 0 8px white
+                )
+
+                drop-shadow(
+                    0 0 22px var(--pink)
+                )
+
+                drop-shadow(
+                    0 0 35px var(--cyan)
+                );
+
+
+            animation:
+
+                llamaBounce
+                2.5s
+                ease-in-out
+                infinite;
+
+        }
+
+
         .llama-crown {
-            position: absolute;
 
-            top: 8%;
+            position:
+                absolute;
 
-            z-index: 3;
+            z-index:
+                3;
 
-            font-size: 45px;
+            top:
+                6%;
+
+
+            font-size:
+                50px;
+
 
             transform:
                 rotate(-8deg);
+
+
+            filter:
+
+                drop-shadow(
+                    0 0 10px #fff56b
+                );
+
         }
 
 
         /* =========================================================
-           HERO TEXT
+           DESCRIPTION
            ========================================================= */
 
         .hero-description {
+
             width:
-                min(650px, 100%);
+                min(680px, 100%);
+
 
             margin:
+
                 0 auto
-                30px;
+                32px;
 
-            line-height: 1.8;
 
-            font-size: 16px;
+            font-size:
+                16px;
+
+
+            line-height:
+                1.8;
+
 
             text-shadow:
-                1px 2px 0 rgba(125, 0, 91, .55);
+
+                1px 2px 0 #8b166e,
+
+                0 0 8px rgba(255,255,255,.65);
+
         }
 
-        .danger {
-            color: #fff84a;
 
-            font-weight: 900;
+        .danger {
+
+            color:
+                var(--yellow);
+
+
+            font-weight:
+                900;
+
+
+            text-shadow:
+
+                0 0 8px #fff,
+
+                0 0 15px #ffed2c;
+
         }
 
 
@@ -739,156 +1432,349 @@
            ========================================================= */
 
         .socials {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
 
-            gap: 12px;
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            justify-content:
+                center;
+
+
+            gap:
+                13px;
+
         }
+
 
         .social-button {
-            text-decoration: none;
 
-            color: white;
+            display:
+                inline-block;
+
 
             padding:
+
                 13px
-                22px;
+                23px;
+
+
+            text-decoration:
+                none;
+
+
+            color:
+                white;
+
 
             border:
-                3px solid white;
 
-            border-radius: 999px;
+                3px
+                solid
+                white;
+
+
+            border-radius:
+                999px;
+
 
             background:
+
                 linear-gradient(
                     135deg,
-                    #ff25ae,
-                    #a94dff
+                    #ff159f,
+                    #a646ff,
+                    #37dff5
                 );
 
-            box-shadow:
-                0 5px 0 #9e197d;
 
-            font-weight: 900;
+            background-size:
+                200%;
+
+
+            box-shadow:
+
+                0 5px 0 #95146f,
+
+                0 0 10px white,
+
+                0 0 22px var(--pink);
+
+
+            font-weight:
+                900;
+
 
             transition:
+
                 transform .2s,
-                filter .2s;
+
+                filter .2s,
+
+                box-shadow .2s;
+
         }
 
+
         .social-button:hover {
+
             transform:
-                translateY(-4px)
-                rotate(-2deg);
+
+                translateY(-5px)
+                rotate(-2deg)
+                scale(1.05);
+
 
             filter:
                 brightness(1.2);
+
+
+            box-shadow:
+
+                0 8px 0 #95146f,
+
+                0 0 15px white,
+
+                0 0 35px var(--pink),
+
+                0 0 55px var(--cyan);
+
         }
 
 
         /* =========================================================
-           CONTENT GRID
+           CONTENT CARDS
            ========================================================= */
 
         .content-grid {
-            display: grid;
+
+            display:
+                grid;
+
 
             grid-template-columns:
-                repeat(2, 1fr);
 
-            gap: 25px;
-
-            margin-top: 35px;
-        }
-
-        .card {
-            position: relative;
-
-            padding:
-                28px;
-
-            border:
-                4px solid white;
-
-            border-radius:
-                32px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255, 69, 194, .65),
-                    rgba(113, 72, 214, .55)
+                repeat(
+                    2,
+                    1fr
                 );
 
-            box-shadow:
-                0 0 0 4px #ff65dc,
-                0 0 25px rgba(255,255,255,.7);
+
+            gap:
+                28px;
+
+
+            margin-top:
+                40px;
+
+        }
+
+
+        .card {
+
+            position:
+                relative;
+
+
+            padding:
+                30px;
+
+
+            border:
+
+                4px
+                solid
+                white;
+
+
+            border-radius:
+                35px;
+
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(255, 38, 188, .64),
+                    rgba(112, 51, 202, .57),
+                    rgba(47, 202, 231, .30)
+                );
+
 
             backdrop-filter:
-                blur(12px);
+                blur(15px);
+
+
+            box-shadow:
+
+                0 0 0 4px var(--pink),
+
+                0 0 15px white,
+
+                0 0 35px var(--pink),
+
+                0 0 60px rgba(111, 57, 255, .55),
+
+                inset 0 0 25px rgba(255,255,255,.18);
+
+
+            transition:
+
+                transform .25s,
+
+                box-shadow .25s;
+
         }
+
+
+        .card:hover {
+
+            transform:
+                translateY(-6px);
+
+
+            box-shadow:
+
+                0 0 0 4px var(--pink),
+
+                0 0 20px white,
+
+                0 0 50px var(--pink),
+
+                0 0 85px var(--cyan);
+
+        }
+
 
         .card h2 {
-            margin-bottom: 15px;
 
-            font-size: 25px;
+            margin-bottom:
+                15px;
 
-            color: #fff85e;
+
+            color:
+                var(--yellow);
+
+
+            font-size:
+                25px;
+
 
             text-shadow:
-                2px 2px 0 #e2149c;
+
+                2px 2px 0 #d31692,
+
+                0 0 8px white,
+
+                0 0 18px var(--pink);
+
         }
+
 
         .card p {
-            line-height: 1.75;
+
+            line-height:
+                1.75;
+
         }
 
+
         .card-sticker {
-            position: absolute;
 
-            top: -20px;
-            right: 20px;
+            position:
+                absolute;
 
-            font-size: 45px;
+
+            top:
+                -22px;
+
+            right:
+                20px;
+
+
+            font-size:
+                48px;
+
 
             transform:
                 rotate(12deg);
 
+
             filter:
-                drop-shadow(0 0 8px white);
+
+                drop-shadow(
+                    0 0 8px white
+                )
+
+                drop-shadow(
+                    0 0 15px var(--pink)
+                );
+
         }
 
 
         /* =========================================================
-           CURRENTLY INTO
+           INTEREST TAGS
            ========================================================= */
 
         .interest-list {
-            display: flex;
-            flex-wrap: wrap;
 
-            gap: 8px;
+            display:
+                flex;
 
-            margin-top: 15px;
+            flex-wrap:
+                wrap;
+
+
+            gap:
+                9px;
+
+
+            margin-top:
+                18px;
+
         }
 
+
         .interest {
+
             padding:
+
                 8px
-                12px;
+                13px;
+
 
             border:
-                2px solid white;
 
-            border-radius: 999px;
+                2px
+                solid
+                white;
+
+
+            border-radius:
+                999px;
+
 
             background:
-                rgba(255,255,255,.16);
+                rgba(255,255,255,.15);
 
-            font-size: 13px;
 
-            font-weight: bold;
+            box-shadow:
+
+                0 0 8px rgba(255,255,255,.8),
+
+                0 0 12px var(--pink);
+
+
+            font-size:
+                13px;
+
+
+            font-weight:
+                bold;
+
         }
 
 
@@ -897,106 +1783,268 @@
            ========================================================= */
 
         .shrine {
-            margin-top: 35px;
+
+            position:
+                relative;
+
+
+            margin-top:
+                40px;
+
 
             padding:
-                40px
+
+                45px
                 25px;
 
-            text-align: center;
+
+            text-align:
+                center;
+
 
             border:
-                5px solid white;
 
-            border-radius: 45px;
+                4px
+                solid
+                white;
+
+
+            border-radius:
+                45px;
+
 
             background:
+
                 linear-gradient(
                     135deg,
-                    rgba(255, 85, 202, .72),
-                    rgba(81, 213, 255, .55)
+                    rgba(255, 40, 194, .67),
+                    rgba(131, 59, 211, .60),
+                    rgba(50, 218, 246, .43)
                 );
 
+
+            backdrop-filter:
+                blur(15px);
+
+
             box-shadow:
-                0 0 0 6px #ff4fcf,
-                0 0 30px white;
+
+                0 0 0 5px var(--pink),
+
+                0 0 15px white,
+
+                0 0 45px var(--pink),
+
+                0 0 85px var(--purple),
+
+                inset 0 0 35px rgba(255,255,255,.20);
+
         }
 
+
         .shrine h2 {
+
             font-family:
                 Georgia,
                 serif;
 
-            font-style: italic;
+
+            font-style:
+                italic;
+
 
             font-size:
                 clamp(32px, 6vw, 55px);
 
-            margin-bottom: 10px;
+
+            margin-bottom:
+                10px;
+
 
             text-shadow:
-                3px 3px 0 #df189a;
+
+                3px 3px 0 #d51899,
+
+                0 0 10px white,
+
+                0 0 25px var(--pink);
+
         }
 
-        .llama-row {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
 
-            gap: 15px;
+        .llama-row {
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            flex-wrap:
+                wrap;
+
+
+            gap:
+                15px;
+
 
             margin:
-                25px 0;
+
+                28px
+                0;
+
 
             font-size:
                 clamp(45px, 8vw, 80px);
+
         }
 
+
         .llama-row span {
-            display: inline-block;
+
+            display:
+                inline-block;
+
+
+            cursor:
+                default;
+
+
+            filter:
+
+                drop-shadow(
+                    0 0 8px white
+                )
+
+                drop-shadow(
+                    0 0 15px var(--pink)
+                );
+
 
             transition:
                 transform .25s;
+
         }
+
 
         .llama-row span:hover {
+
             transform:
-                scale(1.25)
+
+                scale(1.30)
                 rotate(10deg);
+
         }
+
 
         #llama-quote {
-            min-height: 55px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            min-height:
+                60px;
 
-            font-weight: bold;
 
-            font-size: 17px;
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+
+            font-size:
+                17px;
+
+
+            font-weight:
+                bold;
+
+
+            text-shadow:
+
+                0 0 7px white,
+
+                0 0 15px var(--pink);
+
         }
 
+
         .quote-button {
-            margin-top: 15px;
 
-            border:
-                3px solid white;
+            margin-top:
+                15px;
 
-            border-radius: 999px;
 
             padding:
-                11px
-                18px;
 
-            color: white;
+                12px
+                20px;
+
+
+            border:
+
+                3px
+                solid
+                white;
+
+
+            border-radius:
+                999px;
+
+
+            color:
+                white;
+
+
+            cursor:
+                pointer;
+
 
             background:
-                #ff279f;
 
-            font-weight: bold;
+                linear-gradient(
+                    90deg,
+                    var(--hotpink),
+                    var(--purple),
+                    var(--cyan)
+                );
 
-            cursor: pointer;
+
+            font-weight:
+                bold;
+
+
+            box-shadow:
+
+                0 0 10px white,
+
+                0 0 25px var(--pink);
+
+
+            transition:
+
+                transform .2s,
+
+                box-shadow .2s;
+
+        }
+
+
+        .quote-button:hover {
+
+            transform:
+                scale(1.06);
+
+
+            box-shadow:
+
+                0 0 15px white,
+
+                0 0 35px var(--pink),
+
+                0 0 55px var(--cyan);
+
         }
 
 
@@ -1005,111 +2053,257 @@
            ========================================================= */
 
         .music-player {
-            position: fixed;
 
-            right: 18px;
-            bottom: 18px;
+            position:
+                fixed;
 
-            z-index: 1000;
+
+            right:
+                18px;
+
+            bottom:
+                18px;
+
+
+            z-index:
+                5000;
+
 
             width:
-                min(300px, calc(100% - 36px));
-
-            padding:
-                13px
-                16px;
-
-            border:
-                3px solid white;
-
-            border-radius: 25px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(255, 31, 169, .92),
-                    rgba(112, 55, 210, .92)
+                min(
+                    315px,
+                    calc(100% - 36px)
                 );
 
-            box-shadow:
-                0 0 20px white;
 
-            backdrop-filter:
-                blur(15px);
-        }
+            padding:
 
-        .music-title {
-            font-size: 10px;
+                14px
+                17px;
 
-            letter-spacing: 2px;
-
-            font-weight: bold;
-
-            color: #fff15c;
-
-            margin-bottom: 4px;
-        }
-
-        .music-info {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 10px;
-        }
-
-        .music-info span {
-            font-size: 12px;
-
-            white-space: nowrap;
-
-            overflow: hidden;
-
-            text-overflow: ellipsis;
-        }
-
-        .music-controls {
-            display: flex;
-
-            gap: 6px;
-        }
-
-        .music-controls button {
-            width: 32px;
-            height: 32px;
 
             border:
-                2px solid white;
 
-            border-radius: 50%;
+                3px
+                solid
+                white;
 
-            cursor: pointer;
 
-            color: white;
+            border-radius:
+                26px;
+
 
             background:
-                rgba(255,255,255,.18);
 
-            font-weight: bold;
+                linear-gradient(
+                    135deg,
+                    rgba(255, 18, 161, .92),
+                    rgba(117, 48, 207, .92),
+                    rgba(37, 187, 224, .86)
+                );
+
+
+            backdrop-filter:
+                blur(18px);
+
+
+            box-shadow:
+
+                0 0 10px white,
+
+                0 0 30px var(--pink),
+
+                0 0 55px var(--purple);
+
+        }
+
+
+        .music-title {
+
+            margin-bottom:
+                5px;
+
+
+            color:
+                var(--yellow);
+
+
+            font-size:
+                10px;
+
+
+            font-weight:
+                bold;
+
+
+            letter-spacing:
+                2px;
+
+
+            text-shadow:
+
+                0 0 8px #fff85b;
+
+        }
+
+
+        .music-info {
+
+            display:
+                flex;
+
+
+            align-items:
+                center;
+
+
+            justify-content:
+                space-between;
+
+
+            gap:
+                10px;
+
+        }
+
+
+        .track-name {
+
+            min-width:
+                0;
+
+
+            overflow:
+                hidden;
+
+
+            white-space:
+                nowrap;
+
+
+            text-overflow:
+                ellipsis;
+
+
+            font-size:
+                12px;
+
+
+            font-weight:
+                bold;
+
+        }
+
+
+        .music-controls {
+
+            display:
+                flex;
+
+
+            gap:
+                7px;
+
+        }
+
+
+        .music-controls button {
+
+            width:
+                34px;
+
+            height:
+                34px;
+
+
+            border:
+
+                2px
+                solid
+                white;
+
+
+            border-radius:
+                50%;
+
+
+            color:
+                white;
+
+
+            cursor:
+                pointer;
+
+
+            background:
+                rgba(255,255,255,.17);
+
+
+            box-shadow:
+
+                0 0 8px white,
+
+                0 0 13px var(--pink);
+
+
+            font-weight:
+                bold;
+
+
+            transition:
+
+                transform .2s,
+
+                background .2s;
+
+        }
+
+
+        .music-controls button:hover {
+
+            transform:
+                scale(1.12);
+
+
+            background:
+                rgba(255,255,255,.30);
+
         }
 
 
         /* =========================================================
-           YOUTUBE PLAYER HIDDEN
+           YOUTUBE PLAYER
            ========================================================= */
 
         #youtube-player {
-            position: fixed;
 
-            width: 1px;
-            height: 1px;
+            position:
+                fixed;
 
-            bottom: 0;
-            left: 0;
 
-            opacity: .001;
+            left:
+                -9999px;
 
-            pointer-events: none;
+
+            top:
+                -9999px;
+
+
+            width:
+                1px;
+
+
+            height:
+                1px;
+
+
+            opacity:
+                0;
+
+
+            pointer-events:
+                none;
+
         }
 
 
@@ -1118,57 +2312,247 @@
            ========================================================= */
 
         footer {
-            text-align: center;
+
+            margin-top:
+                45px;
+
 
             padding:
-                45px 15px
+
+                28px
                 20px;
 
-            font-size: 12px;
 
-            letter-spacing: 2px;
+            text-align:
+                center;
 
-            text-transform: uppercase;
+
+            border:
+
+                3px
+                solid
+                white;
+
+
+            border-radius:
+                30px;
+
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    rgba(255, 21, 169, .70),
+                    rgba(113, 52, 201, .70),
+                    rgba(43, 196, 225, .55)
+                );
+
+
+            backdrop-filter:
+                blur(15px);
+
+
+            box-shadow:
+
+                0 0 10px white,
+
+                0 0 30px var(--pink),
+
+                0 0 55px var(--purple);
+
+
+            font-size:
+                12px;
+
+
+            letter-spacing:
+                1px;
+
+        }
+
+
+        .footer-main {
+
+            font-weight:
+                bold;
+
+
+            margin-bottom:
+                14px;
+
 
             text-shadow:
-                1px 1px 0 #c11891;
+
+                0 0 8px white,
+
+                0 0 15px var(--pink);
+
+        }
+
+
+        .legal-links {
+
+            display:
+                flex;
+
+
+            justify-content:
+                center;
+
+
+            align-items:
+                center;
+
+
+            flex-wrap:
+                wrap;
+
+
+            gap:
+                12px;
+
+        }
+
+
+        .legal-links a {
+
+            color:
+                white;
+
+
+            text-decoration:
+                none;
+
+
+            font-weight:
+                bold;
+
+
+            padding:
+
+                7px
+                13px;
+
+
+            border:
+
+                2px
+                solid
+                rgba(255,255,255,.85);
+
+
+            border-radius:
+                999px;
+
+
+            background:
+                rgba(255,255,255,.12);
+
+
+            transition:
+
+                transform .2s,
+
+                box-shadow .2s,
+
+                background .2s;
+
+        }
+
+
+        .legal-links a:hover {
+
+            transform:
+                translateY(-2px);
+
+
+            background:
+                rgba(255,255,255,.23);
+
+
+            box-shadow:
+
+                0 0 10px white,
+
+                0 0 20px var(--pink);
+
         }
 
 
         /* =========================================================
-           SPARKLES CREATED WITH JS
+           CURSOR SPARKLES
            ========================================================= */
 
         .sparkle {
-            position: fixed;
 
-            z-index: 9999;
+            position:
+                fixed;
 
-            pointer-events: none;
 
-            font-size: 17px;
+            z-index:
+                99998;
+
+
+            pointer-events:
+                none;
+
+
+            font-size:
+                17px;
+
+
+            filter:
+
+                drop-shadow(
+                    0 0 5px white
+                )
+
+                drop-shadow(
+                    0 0 10px var(--pink)
+                );
+
 
             animation:
-                sparkleDisappear .8s linear forwards;
+
+                sparkleDisappear
+                .85s
+                linear
+                forwards;
+
         }
+
 
         @keyframes sparkleDisappear {
 
             0% {
-                opacity: 1;
+
+                opacity:
+                    1;
+
 
                 transform:
-                    scale(1)
-                    translateY(0);
+
+                    scale(1.2)
+                    translateY(0)
+                    rotate(0deg);
+
             }
+
 
             100% {
-                opacity: 0;
+
+                opacity:
+                    0;
+
 
                 transform:
+
                     scale(.2)
-                    translateY(-25px);
+                    translateY(-30px)
+                    rotate(80deg);
+
             }
+
         }
 
 
@@ -1178,46 +2562,107 @@
 
         @media (max-width: 750px) {
 
-            .content-grid {
-                grid-template-columns: 1fr;
+            body {
+
+                background-attachment:
+                    scroll;
+
             }
+
 
             .page {
-                width:
-                    min(94%, 1100px);
 
-                padding-top: 20px;
+                width:
+                    min(
+                        94%,
+                        1100px
+                    );
+
+
+                padding-top:
+                    20px;
+
             }
+
+
+            .content-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
 
             .hero {
+
                 padding:
-                    60px
+
+                    65px
                     15px
                     45px;
+
             }
+
 
             .hero-tagline {
-                letter-spacing: 2px;
+
+                letter-spacing:
+                    2px;
+
             }
+
+
+            .hero::before {
+
+                font-size:
+                    12px;
+
+
+                letter-spacing:
+                    4px;
+
+            }
+
 
             .top-bar {
-                font-size: 9px;
+
+                font-size:
+                    9px;
+
+
+                letter-spacing:
+                    1px;
+
             }
 
+
             .music-player {
-                left: 50%;
-                right: auto;
+
+                left:
+                    50%;
+
+
+                right:
+                    auto;
+
 
                 transform:
                     translateX(-50%);
+
             }
 
+
             footer {
-                padding-bottom: 110px;
+
+                margin-bottom:
+                    100px;
+
             }
+
         }
 
     </style>
+
 </head>
 
 
@@ -1232,32 +2677,49 @@
 
         <div class="enter-box">
 
-            <div class="enter-stickers">
+            <div class="enter-symbols">
+
                 ♡ ✦ 🌈 ✦ ♡
+
             </div>
+
 
             <span class="enter-llama">
+
                 🦙
+
             </span>
 
+
             <h1>
+
                 LamaGoddess
+
             </h1>
 
-            <div class="enter-subtitle">
+
+            <div class="enter-tagline">
+
                 cute · chaotic · potentially deadly
+
             </div>
+
 
             <button
                 class="enter-button"
                 id="enter-button"
                 type="button"
             >
+
                 ♡ ENTER LAMALAND ♡
+
             </button>
 
+
             <div class="enter-note">
-                ♫ sound on · best experienced irresponsibly ♫
+
+                ♫ sound on · enter at your own risk ♫
+
             </div>
 
         </div>
@@ -1267,17 +2729,34 @@
 
 
     <!-- =========================================================
-         BACKGROUND STICKERS
+         FLOATING DECORATION
          ========================================================= -->
 
     <div class="background-decoration">
 
-        <div class="floating">🌈</div>
-        <div class="floating">💖</div>
-        <div class="floating">⭐</div>
-        <div class="floating">🦙</div>
-        <div class="floating">🎀</div>
-        <div class="floating">☠️</div>
+        <div class="floating">
+            🌈
+        </div>
+
+        <div class="floating">
+            💖
+        </div>
+
+        <div class="floating">
+            ⭐
+        </div>
+
+        <div class="floating">
+            🦙
+        </div>
+
+        <div class="floating">
+            🎀
+        </div>
+
+        <div class="floating">
+            ☠️
+        </div>
 
     </div>
 
@@ -1290,16 +2769,23 @@
     <main class="page">
 
 
-        <!-- TOP BAR -->
+        <!-- =====================================================
+             TOP BAR
+             ===================================================== -->
 
         <div class="top-bar">
 
             <span>
+
                 ✦ LAMAGODDESS.EXE
+
             </span>
 
+
             <span class="online">
+
                 ● ONLINE
+
             </span>
 
         </div>
@@ -1312,40 +2798,63 @@
 
         <section class="hero">
 
+
             <div class="hero-label">
+
                 ♡ WELCOME TO MY LITTLE INTERNET CHAOS ♡
+
             </div>
+
 
             <h1>
+
                 LamaGoddess
+
             </h1>
 
+
             <div class="hero-tagline">
+
                 Sweet ♡ But Deadly
+
             </div>
 
 
-            <!-- LLAMA HEART -->
 
-            <div class="llama-heart">
+            <!-- LLAMA ORB -->
 
-                <div class="heart-shape"></div>
+            <div class="llama-orb">
 
                 <div class="llama-crown">
+
                     👑
+
                 </div>
 
-                <div class="llama-center">
+
+                <div class="llama-main">
+
                     🦙
+
                 </div>
 
             </div>
 
+
+
+            <!-- DESCRIPTION -->
 
             <p class="hero-description">
 
                 Willkommen in meiner kleinen,
-                viel zu pinken Ecke des Internets.
+
+                <strong>
+                    viel zu pinken
+                </strong>
+
+                Ecke des Internets.
+
+                <br><br>
 
                 Hier treffen
 
@@ -1353,55 +2862,81 @@
                     Games, Chaos, Glitzer
                 </strong>
 
-                und eine vermutlich ungesunde Menge
-                an Lamas aufeinander.
+                und eine vermutlich völlig
+                vernünftige Menge an Lamas
+                aufeinander.
 
                 <br><br>
 
                 Sieht süß aus.
 
                 <span class="danger">
+
                     Ist möglicherweise gefährlich.
+
                 </span>
 
             </p>
 
 
-            <!-- SOCIAL LINKS -->
+
+            <!-- =================================================
+                 SOCIAL LINKS
+
+                 Hier später "#" gegen die richtigen Links
+                 austauschen.
+                 ================================================= -->
 
             <div class="socials">
 
+
                 <a
                     href="#"
                     class="social-button"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
+
                     ♡ Twitch
+
                 </a>
+
 
                 <a
                     href="#"
                     class="social-button"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
+
                     ✦ Discord
+
                 </a>
+
 
                 <a
                     href="#"
                     class="social-button"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
+
                     ★ Steam
+
                 </a>
+
 
                 <a
                     href="#"
                     class="social-button"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
+
                     ♡ Instagram
+
                 </a>
+
 
             </div>
 
@@ -1410,7 +2945,7 @@
 
 
         <!-- =====================================================
-             CONTENT
+             CARDS
              ===================================================== -->
 
         <section class="content-grid">
@@ -1421,16 +2956,24 @@
             <article class="card">
 
                 <div class="card-sticker">
+
                     🎀
+
                 </div>
 
+
                 <h2>
+
                     ♡ About Me
+
                 </h2>
+
 
                 <p>
 
-                    Hi! Ich bin
+                    Hi!
+
+                    Ich bin
 
                     <strong>
                         LamaGoddess
@@ -1441,8 +2984,11 @@
 
                     <br><br>
 
-                    Ich mag Games, Musik,
-                    süße Dinge, viel zu viel Pink
+                    Ich mag Games,
+                    Musik,
+                    süße Dinge,
+                    viel zu viel Pink
+
                     und natürlich:
 
                     <strong>
@@ -1453,7 +2999,11 @@
 
                     Eigentlich ganz harmlos.
 
-                    Vermutlich.
+                    <br>
+
+                    <strong>
+                        Vermutlich.
+                    </strong>
 
                 </p>
 
@@ -1466,44 +3016,72 @@
             <article class="card">
 
                 <div class="card-sticker">
+
                     💀
+
                 </div>
 
+
                 <h2>
+
                     ✦ Currently Into
+
                 </h2>
 
+
                 <p>
+
                     Dinge, die gerade irgendwo
                     zwischen meinen Gehirnzellen
                     herumfliegen:
+
                 </p>
+
 
                 <div class="interest-list">
 
+
                     <span class="interest">
+
                         🎮 Gaming
+
                     </span>
 
+
                     <span class="interest">
+
                         🎧 Music
+
                     </span>
 
+
                     <span class="interest">
+
                         🌈 Cute Stuff
+
                     </span>
 
+
                     <span class="interest">
+
                         ☠️ Chaos
+
                     </span>
 
+
                     <span class="interest">
+
                         🦙 Llamas
+
                     </span>
 
+
                     <span class="interest">
+
                         🎀 Pretty Things
+
                     </span>
+
 
                 </div>
 
@@ -1519,25 +3097,40 @@
 
         <section class="shrine">
 
+
             <h2>
+
                 ✦ The Llama Shrine ✦
+
             </h2>
 
+
             <p>
+
                 Pay your respects.
+
+                <br>
+
                 The llamas are watching.
+
             </p>
+
 
 
             <div class="llama-row">
 
                 <span>🦙</span>
+
                 <span>🦙</span>
+
                 <span>🦙</span>
+
                 <span>🦙</span>
+
                 <span>🦙</span>
 
             </div>
+
 
 
             <div id="llama-quote">
@@ -1547,28 +3140,68 @@
             </div>
 
 
+
             <button
                 class="quote-button"
                 id="quote-button"
                 type="button"
             >
+
                 ✦ Ask the Llama ✦
+
             </button>
+
 
         </section>
 
 
 
-        <!-- FOOTER -->
+        <!-- =====================================================
+             FOOTER
+             ===================================================== -->
 
         <footer>
 
-            ♡ made with glitter, questionable decisions
-            & llamas ♡
 
-            <br><br>
+            <div class="footer-main">
 
-            LamaGoddess © 2026
+                ♡ made with glitter,
+                questionable decisions
+                & llamas ♡
+
+                <br><br>
+
+                LamaGoddess © 2026
+
+            </div>
+
+
+            <div class="legal-links">
+
+
+                <a href="./impressum.html">
+
+                    Impressum
+
+                </a>
+
+
+                <span>
+
+                    ♡
+
+                </span>
+
+
+                <a href="./datenschutz.html">
+
+                    Datenschutz
+
+                </a>
+
+
+            </div>
+
 
         </footer>
 
@@ -1583,43 +3216,62 @@
 
     <div class="music-player">
 
+
         <div class="music-title">
+
             ♫ NOW PLAYING ♫
+
         </div>
+
 
         <div class="music-info">
 
-            <span>
+
+            <span class="track-name">
+
                 LamaGoddess Radio ♡
+
             </span>
 
+
             <div class="music-controls">
+
 
                 <button
                     id="play-button"
                     type="button"
-                    title="Play"
+                    title="Musik abspielen"
                 >
+
                     ▶
+
                 </button>
+
 
                 <button
                     id="pause-button"
                     type="button"
-                    title="Pause"
+                    title="Musik pausieren"
                 >
+
                     ❚❚
+
                 </button>
+
 
             </div>
 
+
         </div>
+
 
     </div>
 
 
 
-    <!-- Hidden YouTube Player -->
+    <!-- =========================================================
+         HIDDEN YOUTUBE PLAYER
+         ========================================================= -->
 
     <div id="youtube-player"></div>
 
@@ -1630,6 +3282,7 @@
          ========================================================= -->
 
     <script src="https://www.youtube.com/iframe_api"></script>
+
 
 
     <script>
@@ -1647,57 +3300,90 @@
 
         function onYouTubeIframeAPIReady() {
 
+
             player = new YT.Player(
+
                 "youtube-player",
+
                 {
 
-                    height: "1",
+                    height:
+                        "1",
 
-                    width: "1",
+                    width:
+                        "1",
 
-                    videoId: "NZu2IlF87wM",
+
+                    /*
+                        Dein gewünschter Song:
+                        https://www.youtube.com/watch?v=NZu2IlF87wM
+                    */
+
+                    videoId:
+                        "NZu2IlF87wM",
+
 
                     playerVars: {
 
-                        autoplay: 0,
+                        autoplay:
+                            0,
 
-                        controls: 0,
+                        controls:
+                            0,
 
-                        disablekb: 1,
+                        disablekb:
+                            1,
 
-                        fs: 0,
+                        fs:
+                            0,
 
-                        modestbranding: 1,
+                        playsinline:
+                            1,
 
-                        playsinline: 1,
+                        rel:
+                            0,
 
-                        rel: 0,
+                        loop:
+                            1,
 
-                        loop: 1,
-
-                        playlist: "NZu2IlF87wM"
+                        playlist:
+                            "NZu2IlF87wM"
 
                     },
 
+
                     events: {
 
-                        onReady: function(event) {
 
-                            playerReady = true;
+                        onReady:
+                            function(event) {
 
-                            event.target.setVolume(35);
 
-                            if (wantsToPlay) {
+                                playerReady =
+                                    true;
 
-                                event.target.playVideo();
+
+                                /*
+                                    Lautstärke 0 - 100
+                                */
+
+                                event.target.setVolume(
+                                    35
+                                );
+
+
+                                if (wantsToPlay) {
+
+                                    event.target.playVideo();
+
+                                }
 
                             }
-
-                        }
 
                     }
 
                 }
+
             );
 
         }
@@ -1705,25 +3391,33 @@
 
 
         /* =========================================================
-           ENTER PAGE
+           ENTER LAMALAND
            ========================================================= */
 
         const enterScreen =
+
             document.getElementById(
                 "enter-screen"
             );
 
+
         const enterButton =
+
             document.getElementById(
                 "enter-button"
             );
 
 
         enterButton.addEventListener(
+
             "click",
+
             function() {
 
-                wantsToPlay = true;
+
+                wantsToPlay =
+                    true;
+
 
                 enterScreen.classList.add(
                     "hidden"
@@ -1740,21 +3434,29 @@
                 }
 
             }
+
         );
 
 
 
         /* =========================================================
-           MUSIC CONTROLS
+           PLAY BUTTON
            ========================================================= */
 
         document
-            .getElementById("play-button")
+            .getElementById(
+                "play-button"
+            )
             .addEventListener(
+
                 "click",
+
                 function() {
 
-                    wantsToPlay = true;
+
+                    wantsToPlay =
+                        true;
+
 
                     if (
                         playerReady &&
@@ -1766,16 +3468,29 @@
                     }
 
                 }
+
             );
 
 
+
+        /* =========================================================
+           PAUSE BUTTON
+           ========================================================= */
+
         document
-            .getElementById("pause-button")
+            .getElementById(
+                "pause-button"
+            )
             .addEventListener(
+
                 "click",
+
                 function() {
 
-                    wantsToPlay = false;
+
+                    wantsToPlay =
+                        false;
+
 
                     if (
                         playerReady &&
@@ -1787,12 +3502,13 @@
                     }
 
                 }
+
             );
 
 
 
         /* =========================================================
-           LLAMA QUOTES
+           LLAMA ORACLE
            ========================================================= */
 
         const llamaQuotes = [
@@ -1803,48 +3519,69 @@
 
             "„Stay cute. Stay dangerous.“",
 
-            "„Manchmal ist Gewalt keine Lösung. Ein Lama allerdings schon.“",
-
             "„Glitzer ist temporär. Lama ist für immer.“",
 
-            "„Do no harm. Take no shit. Pet more llamas.“",
+            "„Das heilige Lama verlangt mehr Pink.“",
 
-            "„Das Orakel sagt: Du brauchst mehr Pink.“",
+            "„Heute ist ein guter Tag für fragwürdige Entscheidungen.“",
 
-            "„Heute ist ein guter Tag, um fragwürdige Entscheidungen zu treffen.“",
+            "„Du wurdest vom Lama gesegnet. Wahrscheinlich.“",
 
-            "„Du wurdest vom heiligen Lama gesegnet. Wahrscheinlich.“",
+            "„Cute enough to fool you. Chaotic enough to regret it.“",
 
-            "„Cute enough to fool you. Chaotic enough to regret it.“"
+            "„Das Lama hat gesprochen. Diskussion beendet.“",
+
+            "„Mehr Glitzer löst vielleicht nicht das Problem. Aber es glitzert.“",
+
+            "„In case of emergency: deploy llama.“",
+
+            "„Das Orakel sieht eine große Menge Chaos in deiner Zukunft.“"
 
         ];
 
 
         const quoteElement =
+
             document.getElementById(
                 "llama-quote"
             );
 
 
-        document
-            .getElementById("quote-button")
-            .addEventListener(
-                "click",
-                function() {
+        const quoteButton =
 
-                    const randomQuote =
-                        llamaQuotes[
-                            Math.floor(
-                                Math.random() *
-                                llamaQuotes.length
-                            )
-                        ];
-
-                    quoteElement.textContent =
-                        randomQuote;
-
-                }
+            document.getElementById(
+                "quote-button"
             );
+
+
+        quoteButton.addEventListener(
+
+            "click",
+
+            function() {
+
+
+                const randomQuote =
+
+                    llamaQuotes[
+
+                        Math.floor(
+
+                            Math.random() *
+
+                            llamaQuotes.length
+
+                        )
+
+                    ];
+
+
+                quoteElement.textContent =
+                    randomQuote;
+
+            }
+
+        );
 
 
 
@@ -1853,27 +3590,45 @@
            ========================================================= */
 
         const sparkleSymbols = [
+
             "✦",
+
             "♡",
+
             "★",
+
             "✧",
-            "💖"
+
+            "💖",
+
+            "⋆",
+
+            "☆"
+
         ];
 
 
-        let lastSparkle = 0;
+        let lastSparkle =
+            0;
 
 
         document.addEventListener(
+
             "mousemove",
+
             function(event) {
+
 
                 const now =
                     Date.now();
 
 
+                /*
+                    Verhindert zu viele Elemente gleichzeitig.
+                */
+
                 if (
-                    now - lastSparkle < 65
+                    now - lastSparkle < 55
                 ) {
 
                     return;
@@ -1881,10 +3636,12 @@
                 }
 
 
-                lastSparkle = now;
+                lastSparkle =
+                    now;
 
 
                 const sparkle =
+
                     document.createElement(
                         "span"
                     );
@@ -1895,20 +3652,52 @@
 
 
                 sparkle.textContent =
+
                     sparkleSymbols[
+
                         Math.floor(
+
                             Math.random() *
+
                             sparkleSymbols.length
+
                         )
+
                     ];
 
 
+                /*
+                    Kleine zufällige Verschiebung
+                */
+
+                const randomX =
+
+                    Math.random() * 14 - 7;
+
+
+                const randomY =
+
+                    Math.random() * 14 - 7;
+
+
                 sparkle.style.left =
-                    event.clientX + "px";
+
+                    (
+                        event.clientX +
+                        randomX
+                    )
+
+                    + "px";
 
 
                 sparkle.style.top =
-                    event.clientY + "px";
+
+                    (
+                        event.clientY +
+                        randomY
+                    )
+
+                    + "px";
 
 
                 document.body.appendChild(
@@ -1917,19 +3706,133 @@
 
 
                 setTimeout(
+
                     function() {
 
                         sparkle.remove();
 
                     },
-                    800
+
+                    850
+
                 );
 
             }
+
+        );
+
+
+
+        /* =========================================================
+           MOBILE TOUCH SPARKLES
+           ========================================================= */
+
+        document.addEventListener(
+
+            "touchstart",
+
+            function(event) {
+
+
+                if (
+                    !event.touches ||
+                    !event.touches[0]
+                ) {
+
+                    return;
+
+                }
+
+
+                const touch =
+                    event.touches[0];
+
+
+                for (
+                    let i = 0;
+                    i < 5;
+                    i++
+                ) {
+
+
+                    const sparkle =
+
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    sparkle.className =
+                        "sparkle";
+
+
+                    sparkle.textContent =
+
+                        sparkleSymbols[
+
+                            Math.floor(
+
+                                Math.random() *
+
+                                sparkleSymbols.length
+
+                            )
+
+                        ];
+
+
+                    sparkle.style.left =
+
+                        (
+                            touch.clientX +
+                            Math.random() * 40 -
+                            20
+                        )
+
+                        + "px";
+
+
+                    sparkle.style.top =
+
+                        (
+                            touch.clientY +
+                            Math.random() * 40 -
+                            20
+                        )
+
+                        + "px";
+
+
+                    document.body.appendChild(
+                        sparkle
+                    );
+
+
+                    setTimeout(
+
+                        function() {
+
+                            sparkle.remove();
+
+                        },
+
+                        850
+
+                    );
+
+                }
+
+            },
+
+            {
+                passive: true
+            }
+
         );
 
     </script>
 
 
 </body>
+
 </html>
