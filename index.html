@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#ff4fd8">
+
+    <title>LamaGoddess ♡</title>
+
+    <meta name="description"
+          content="Welcome to the wonderfully chaotic world of LamaGoddess. Cute, colorful and potentially deadly.">
+
+    <style>
+
+        /* =========================================================
+           LAMAGODDESS
+           KAWAII × Y2K × DECORA × CUTE BUT DEADLY
+           ========================================================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+
+            font-family:
+                "Trebuchet MS",
+                Arial,
+                sans-serif;
+
+            color: #ffffff;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(255, 255, 255, .45),
+                    transparent 18%
+                ),
+
+                radial-gradient(
+                    circle at 80% 30%,
+                    rgba(0, 255, 255, .25),
+                    transparent 22%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #ff65dd,
+                    #ff8be8,
+                    #bd7dff,
+                    #64dcff
+                );
+
+            background-attachment: fixed;
+        }
+
+
+        /* =========================================================
+           CUSTOM SCROLLBAR
+           ========================================================= */
+
+        ::-webkit-scrollbar {
+            width: 13px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #ffb4ec;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border: 3px solid #ffffff;
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    #ff1493,
+                    #b73cff,
+                    #36e6ff
+                );
+        }
+
+
+        /* =========================================================
+           BACKGROUND GRID
+           ========================================================= */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+            inset: 0;
+
+            pointer-events: none;
+
+            opacity: .16;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,.5) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.5) 1px,
+                    transparent 1px
+                );
+
+            background-size: 30px 30px;
+
+            z-index: -2;
+        }
+
+
+        /* =========================================================
+           FLOATING BACKGROUND DECORATION
+           ========================================================= */
+
+        .background-decoration {
+            position: fixed;
+            inset: 0;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+        .floating {
+            position: absolute;
+
+            font-size: clamp(25px, 4vw, 55px);
+
+            filter:
+                drop-shadow(0 0 7px #fff)
+                drop-shadow(0 0 10px #ff4fd8);
+
+            animation:
+                floatAround 7s ease-in-out infinite;
+        }
+
+        .floating:nth-child(1) {
+            top: 8%;
+            left: 4%;
+        }
+
+        .floating:nth-child(2) {
+            top: 18%;
+            right: 6%;
+            animation-delay: -2s;
+        }
+
+        .floating:nth-child(3) {
+            top: 52%;
+            left: 2%;
+            animation-delay: -4s;
+        }
+
+        .floating:nth-child(4) {
+            top: 70%;
+            right: 4%;
+            animation-delay: -1s;
+        }
+
+        .floating:nth-child(5) {
+            top: 88%;
+            left: 8%;
+            animation-delay: -3s;
+        }
+
+        .floating:nth-child(6) {
+            top: 40%;
+            right: 2%;
+            animation-delay: -5s;
+        }
+
+        @keyframes floatAround {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(-7deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-25px)
+                    rotate(8deg);
+            }
+        }
+
+
+        /* =========================================================
+           ENTER SCREEN
+           ========================================================= */
+
+        #enter-screen {
+            position: fixed;
+            inset: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 25px;
+
+            z-index: 99999;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255, 158, 231, .96),
+                    rgba(255, 52, 178, .97) 50%,
+                    rgba(94, 23, 129, .98)
+                );
+
+            transition:
+                opacity .7s ease,
+                visibility .7s ease;
+        }
+
+        #enter-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .enter-box {
+            width: min(600px, 100%);
+
+            position: relative;
+
+            text-align: center;
+
+            padding:
+                50px
+                30px
+                45px;
+
+            border:
+                5px solid #ffffff;
+
+            border-radius: 45px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.35),
+                    rgba(255,110,220,.25)
+                );
+
+            box-shadow:
+                0 0 0 8px #ff50d4,
+                0 0 0 12px #ffffff,
+                0 0 35px #ffffff,
+                0 0 80px #ff3bc4;
+
+            backdrop-filter: blur(15px);
+        }
+
+        .enter-stickers {
+            font-size: 30px;
+
+            margin-bottom: 15px;
+
+            letter-spacing: 8px;
+        }
+
+        .enter-llama {
+            font-size: 100px;
+
+            display: block;
+
+            margin-bottom: 5px;
+
+            animation:
+                llamaBounce 2s ease-in-out infinite;
+
+            filter:
+                drop-shadow(0 0 15px white);
+        }
+
+        @keyframes llamaBounce {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(-3deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-10px)
+                    rotate(3deg);
+            }
+        }
+
+        .enter-box h1 {
+            font-size:
+                clamp(42px, 9vw, 80px);
+
+            line-height: .95;
+
+            margin-bottom: 15px;
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-style: italic;
+
+            color: white;
+
+            text-shadow:
+                3px 3px 0 #ff159f,
+                6px 6px 0 #9637ff,
+                0 0 15px #fff;
+        }
+
+        .enter-subtitle {
+            font-size: 15px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 30px;
+
+            color: #ffffff;
+        }
+
+        .enter-button {
+            border: 4px solid white;
+
+            border-radius: 999px;
+
+            padding:
+                17px
+                35px;
+
+            cursor: pointer;
+
+            color: white;
+
+            font-weight: 900;
+
+            font-size: 17px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff1493,
+                    #ff67dc,
+                    #a94dff,
+                    #31dfff
+                );
+
+            box-shadow:
+                0 7px 0 #a81888,
+                0 0 25px #fff;
+
+            transition:
+                transform .2s,
+                box-shadow .2s;
+        }
+
+        .enter-button:hover {
+            transform:
+                translateY(-4px)
+                scale(1.04);
+
+            box-shadow:
+                0 11px 0 #a81888,
+                0 0 40px #ffffff;
+        }
+
+        .enter-note {
+            margin-top: 22px;
+
+            font-size: 12px;
+
+            opacity: .85;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================================================
+           PAGE
+           ========================================================= */
+
+        .page {
+            width:
+                min(1100px, calc(100% - 30px));
+
+            margin: auto;
+
+            padding:
+                35px 0
+                80px;
+        }
+
+
+        /* =========================================================
+           TOP MINI BAR
+           ========================================================= */
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+
+            margin-bottom: 20px;
+
+            padding:
+                10px
+                18px;
+
+            border:
+                3px solid white;
+
+            border-radius: 999px;
+
+            background:
+                rgba(255, 60, 185, .55);
+
+            box-shadow:
+                0 0 15px #fff;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+        }
+
+        .online {
+            color: #c6ffca;
+        }
+
+
+        /* =========================================================
+           HERO
+           ========================================================= */
+
+        .hero {
+            position: relative;
+
+            overflow: hidden;
+
+            text-align: center;
+
+            padding:
+                70px
+                25px
+                60px;
+
+            border:
+                5px solid #ffffff;
+
+            border-radius: 55px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 94, 207, .72),
+                    rgba(130, 88, 255, .55),
+                    rgba(66, 219, 255, .45)
+                );
+
+            box-shadow:
+                0 0 0 7px #ff4dcf,
+                0 0 0 11px white,
+                0 0 40px rgba(255,255,255,.9),
+                0 0 100px rgba(255,32,190,.6);
+        }
+
+        .hero::before {
+            content: "♡ ✦ ★ ♡ ✧ ★ ♡ ✦ ★ ♡ ✧ ★ ♡";
+
+            position: absolute;
+
+            top: 15px;
+            left: 0;
+
+            width: 100%;
+
+            color: rgba(255,255,255,.75);
+
+            font-size: 20px;
+
+            letter-spacing: 8px;
+        }
+
+        .hero-label {
+            display: inline-block;
+
+            margin-bottom: 15px;
+
+            padding:
+                7px
+                15px;
+
+            border:
+                2px solid white;
+
+            border-radius: 999px;
+
+            background:
+                rgba(255, 0, 138, .55);
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+        }
+
+        .hero h1 {
+            font-family:
+                Georgia,
+                serif;
+
+            font-style: italic;
+
+            font-size:
+                clamp(55px, 11vw, 125px);
+
+            line-height: .9;
+
+            margin-bottom: 8px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #ffec52,
+                    #ff77e1,
+                    #6ff8ff,
+                    #ffffff
+                );
+
+            background-size: 300%;
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+
+            animation:
+                rainbowText 5s linear infinite;
+
+            filter:
+                drop-shadow(3px 4px 0 #e71aa5)
+                drop-shadow(6px 7px 0 #7b39d9)
+                drop-shadow(0 0 10px #ffffff);
+        }
+
+        @keyframes rainbowText {
+
+            from {
+                background-position: 0%;
+            }
+
+            to {
+                background-position: 300%;
+            }
+        }
+
+        .hero-tagline {
+            font-size:
+                clamp(16px, 3vw, 25px);
+
+            font-weight: 900;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            text-shadow:
+                2px 2px 0 #c11891;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================================================
+           LLAMA HEART
+           ========================================================= */
+
+        .llama-heart {
+            width:
+                min(360px, 85vw);
+
+            aspect-ratio: 1;
+
+            margin:
+                10px auto
+                35px;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .heart-shape {
+            position: absolute;
+
+            width: 72%;
+            height: 72%;
+
+            transform:
+                rotate(45deg);
+
+            border:
+                8px solid white;
+
+            border-radius:
+                20px
+                35px
+                20px
+                35px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff3ec5,
+                    #ff98e9,
+                    #7cefff
+                );
+
+            box-shadow:
+                0 0 0 7px #ff47cf,
+                0 0 0 11px white,
+                0 0 35px #fff;
+        }
+
+        .heart-shape::before,
+        .heart-shape::after {
+            content: "";
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            border-radius: 50%;
+
+            background: inherit;
+        }
+
+        .heart-shape::before {
+            left: -50%;
+        }
+
+        .heart-shape::after {
+            top: -50%;
+        }
+
+        .llama-center {
+            position: relative;
+
+            z-index: 2;
+
+            font-size:
+                clamp(100px, 20vw, 170px);
+
+            filter:
+                drop-shadow(0 0 12px white);
+
+            animation:
+                llamaBounce 2.5s ease-in-out infinite;
+        }
+
+        .llama-crown {
+            position: absolute;
+
+            top: 8%;
+
+            z-index: 3;
+
+            font-size: 45px;
+
+            transform:
+                rotate(-8deg);
+        }
+
+
+        /* =========================================================
+           HERO TEXT
+           ========================================================= */
+
+        .hero-description {
+            width:
+                min(650px, 100%);
+
+            margin:
+                0 auto
+                30px;
+
+            line-height: 1.8;
+
+            font-size: 16px;
+
+            text-shadow:
+                1px 2px 0 rgba(125, 0, 91, .55);
+        }
+
+        .danger {
+            color: #fff84a;
+
+            font-weight: 900;
+        }
+
+
+        /* =========================================================
+           SOCIAL BUTTONS
+           ========================================================= */
+
+        .socials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            gap: 12px;
+        }
+
+        .social-button {
+            text-decoration: none;
+
+            color: white;
+
+            padding:
+                13px
+                22px;
+
+            border:
+                3px solid white;
+
+            border-radius: 999px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff25ae,
+                    #a94dff
+                );
+
+            box-shadow:
+                0 5px 0 #9e197d;
+
+            font-weight: 900;
+
+            transition:
+                transform .2s,
+                filter .2s;
+        }
+
+        .social-button:hover {
+            transform:
+                translateY(-4px)
+                rotate(-2deg);
+
+            filter:
+                brightness(1.2);
+        }
+
+
+        /* =========================================================
+           CONTENT GRID
+           ========================================================= */
+
+        .content-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+            margin-top: 35px;
+        }
+
+        .card {
+            position: relative;
+
+            padding:
+                28px;
+
+            border:
+                4px solid white;
+
+            border-radius:
+                32px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 69, 194, .65),
+                    rgba(113, 72, 214, .55)
+                );
+
+            box-shadow:
+                0 0 0 4px #ff65dc,
+                0 0 25px rgba(255,255,255,.7);
+
+            backdrop-filter:
+                blur(12px);
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+
+            font-size: 25px;
+
+            color: #fff85e;
+
+            text-shadow:
+                2px 2px 0 #e2149c;
+        }
+
+        .card p {
+            line-height: 1.75;
+        }
+
+        .card-sticker {
+            position: absolute;
+
+            top: -20px;
+            right: 20px;
+
+            font-size: 45px;
+
+            transform:
+                rotate(12deg);
+
+            filter:
+                drop-shadow(0 0 8px white);
+        }
+
+
+        /* =========================================================
+           CURRENTLY INTO
+           ========================================================= */
+
+        .interest-list {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-top: 15px;
+        }
+
+        .interest {
+            padding:
+                8px
+                12px;
+
+            border:
+                2px solid white;
+
+            border-radius: 999px;
+
+            background:
+                rgba(255,255,255,.16);
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================================================
+           LLAMA SHRINE
+           ========================================================= */
+
+        .shrine {
+            margin-top: 35px;
+
+            padding:
+                40px
+                25px;
+
+            text-align: center;
+
+            border:
+                5px solid white;
+
+            border-radius: 45px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255, 85, 202, .72),
+                    rgba(81, 213, 255, .55)
+                );
+
+            box-shadow:
+                0 0 0 6px #ff4fcf,
+                0 0 30px white;
+        }
+
+        .shrine h2 {
+            font-family:
+                Georgia,
+                serif;
+
+            font-style: italic;
+
+            font-size:
+                clamp(32px, 6vw, 55px);
+
+            margin-bottom: 10px;
+
+            text-shadow:
+                3px 3px 0 #df189a;
+        }
+
+        .llama-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            gap: 15px;
+
+            margin:
+                25px 0;
+
+            font-size:
+                clamp(45px, 8vw, 80px);
+        }
+
+        .llama-row span {
+            display: inline-block;
+
+            transition:
+                transform .25s;
+        }
+
+        .llama-row span:hover {
+            transform:
+                scale(1.25)
+                rotate(10deg);
+        }
+
+        #llama-quote {
+            min-height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-weight: bold;
+
+            font-size: 17px;
+        }
+
+        .quote-button {
+            margin-top: 15px;
+
+            border:
+                3px solid white;
+
+            border-radius: 999px;
+
+            padding:
+                11px
+                18px;
+
+            color: white;
+
+            background:
+                #ff279f;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           MUSIC PLAYER
+           ========================================================= */
+
+        .music-player {
+            position: fixed;
+
+            right: 18px;
+            bottom: 18px;
+
+            z-index: 1000;
+
+            width:
+                min(300px, calc(100% - 36px));
+
+            padding:
+                13px
+                16px;
+
+            border:
+                3px solid white;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255, 31, 169, .92),
+                    rgba(112, 55, 210, .92)
+                );
+
+            box-shadow:
+                0 0 20px white;
+
+            backdrop-filter:
+                blur(15px);
+        }
+
+        .music-title {
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            font-weight: bold;
+
+            color: #fff15c;
+
+            margin-bottom: 4px;
+        }
+
+        .music-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 10px;
+        }
+
+        .music-info span {
+            font-size: 12px;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+        }
+
+        .music-controls {
+            display: flex;
+
+            gap: 6px;
+        }
+
+        .music-controls button {
+            width: 32px;
+            height: 32px;
+
+            border:
+                2px solid white;
+
+            border-radius: 50%;
+
+            cursor: pointer;
+
+            color: white;
+
+            background:
+                rgba(255,255,255,.18);
+
+            font-weight: bold;
+        }
+
+
+        /* =========================================================
+           YOUTUBE PLAYER HIDDEN
+           ========================================================= */
+
+        #youtube-player {
+            position: fixed;
+
+            width: 1px;
+            height: 1px;
+
+            bottom: 0;
+            left: 0;
+
+            opacity: .001;
+
+            pointer-events: none;
+        }
+
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
+        footer {
+            text-align: center;
+
+            padding:
+                45px 15px
+                20px;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            text-shadow:
+                1px 1px 0 #c11891;
+        }
+
+
+        /* =========================================================
+           SPARKLES CREATED WITH JS
+           ========================================================= */
+
+        .sparkle {
+            position: fixed;
+
+            z-index: 9999;
+
+            pointer-events: none;
+
+            font-size: 17px;
+
+            animation:
+                sparkleDisappear .8s linear forwards;
+        }
+
+        @keyframes sparkleDisappear {
+
+            0% {
+                opacity: 1;
+
+                transform:
+                    scale(1)
+                    translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+
+                transform:
+                    scale(.2)
+                    translateY(-25px);
+            }
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+           ========================================================= */
+
+        @media (max-width: 750px) {
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page {
+                width:
+                    min(94%, 1100px);
+
+                padding-top: 20px;
+            }
+
+            .hero {
+                padding:
+                    60px
+                    15px
+                    45px;
+            }
+
+            .hero-tagline {
+                letter-spacing: 2px;
+            }
+
+            .top-bar {
+                font-size: 9px;
+            }
+
+            .music-player {
+                left: 50%;
+                right: auto;
+
+                transform:
+                    translateX(-50%);
+            }
+
+            footer {
+                padding-bottom: 110px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         ENTER SCREEN
+         ========================================================= -->
+
+    <div id="enter-screen">
+
+        <div class="enter-box">
+
+            <div class="enter-stickers">
+                ♡ ✦ 🌈 ✦ ♡
+            </div>
+
+            <span class="enter-llama">
+                🦙
+            </span>
+
+            <h1>
+                LamaGoddess
+            </h1>
+
+            <div class="enter-subtitle">
+                cute · chaotic · potentially deadly
+            </div>
+
+            <button
+                class="enter-button"
+                id="enter-button"
+                type="button"
+            >
+                ♡ ENTER LAMALAND ♡
+            </button>
+
+            <div class="enter-note">
+                ♫ sound on · best experienced irresponsibly ♫
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         BACKGROUND STICKERS
+         ========================================================= -->
+
+    <div class="background-decoration">
+
+        <div class="floating">🌈</div>
+        <div class="floating">💖</div>
+        <div class="floating">⭐</div>
+        <div class="floating">🦙</div>
+        <div class="floating">🎀</div>
+        <div class="floating">☠️</div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         MAIN PAGE
+         ========================================================= -->
+
+    <main class="page">
+
+
+        <!-- TOP BAR -->
+
+        <div class="top-bar">
+
+            <span>
+                ✦ LAMAGODDESS.EXE
+            </span>
+
+            <span class="online">
+                ● ONLINE
+            </span>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             HERO
+             ===================================================== -->
+
+        <section class="hero">
+
+            <div class="hero-label">
+                ♡ WELCOME TO MY LITTLE INTERNET CHAOS ♡
+            </div>
+
+            <h1>
+                LamaGoddess
+            </h1>
+
+            <div class="hero-tagline">
+                Sweet ♡ But Deadly
+            </div>
+
+
+            <!-- LLAMA HEART -->
+
+            <div class="llama-heart">
+
+                <div class="heart-shape"></div>
+
+                <div class="llama-crown">
+                    👑
+                </div>
+
+                <div class="llama-center">
+                    🦙
+                </div>
+
+            </div>
+
+
+            <p class="hero-description">
+
+                Willkommen in meiner kleinen,
+                viel zu pinken Ecke des Internets.
+
+                Hier treffen
+
+                <strong>
+                    Games, Chaos, Glitzer
+                </strong>
+
+                und eine vermutlich ungesunde Menge
+                an Lamas aufeinander.
+
+                <br><br>
+
+                Sieht süß aus.
+
+                <span class="danger">
+                    Ist möglicherweise gefährlich.
+                </span>
+
+            </p>
+
+
+            <!-- SOCIAL LINKS -->
+
+            <div class="socials">
+
+                <a
+                    href="#"
+                    class="social-button"
+                    target="_blank"
+                >
+                    ♡ Twitch
+                </a>
+
+                <a
+                    href="#"
+                    class="social-button"
+                    target="_blank"
+                >
+                    ✦ Discord
+                </a>
+
+                <a
+                    href="#"
+                    class="social-button"
+                    target="_blank"
+                >
+                    ★ Steam
+                </a>
+
+                <a
+                    href="#"
+                    class="social-button"
+                    target="_blank"
+                >
+                    ♡ Instagram
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CONTENT
+             ===================================================== -->
+
+        <section class="content-grid">
+
+
+            <!-- ABOUT -->
+
+            <article class="card">
+
+                <div class="card-sticker">
+                    🎀
+                </div>
+
+                <h2>
+                    ♡ About Me
+                </h2>
+
+                <p>
+
+                    Hi! Ich bin
+
+                    <strong>
+                        LamaGoddess
+                    </strong>
+
+                    und das hier ist mein persönliches
+                    kleines Internet-Zuhause.
+
+                    <br><br>
+
+                    Ich mag Games, Musik,
+                    süße Dinge, viel zu viel Pink
+                    und natürlich:
+
+                    <strong>
+                        Lamas.
+                    </strong>
+
+                    <br><br>
+
+                    Eigentlich ganz harmlos.
+
+                    Vermutlich.
+
+                </p>
+
+            </article>
+
+
+
+            <!-- CURRENTLY INTO -->
+
+            <article class="card">
+
+                <div class="card-sticker">
+                    💀
+                </div>
+
+                <h2>
+                    ✦ Currently Into
+                </h2>
+
+                <p>
+                    Dinge, die gerade irgendwo
+                    zwischen meinen Gehirnzellen
+                    herumfliegen:
+                </p>
+
+                <div class="interest-list">
+
+                    <span class="interest">
+                        🎮 Gaming
+                    </span>
+
+                    <span class="interest">
+                        🎧 Music
+                    </span>
+
+                    <span class="interest">
+                        🌈 Cute Stuff
+                    </span>
+
+                    <span class="interest">
+                        ☠️ Chaos
+                    </span>
+
+                    <span class="interest">
+                        🦙 Llamas
+                    </span>
+
+                    <span class="interest">
+                        🎀 Pretty Things
+                    </span>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             LLAMA SHRINE
+             ===================================================== -->
+
+        <section class="shrine">
+
+            <h2>
+                ✦ The Llama Shrine ✦
+            </h2>
+
+            <p>
+                Pay your respects.
+                The llamas are watching.
+            </p>
+
+
+            <div class="llama-row">
+
+                <span>🦙</span>
+                <span>🦙</span>
+                <span>🦙</span>
+                <span>🦙</span>
+                <span>🦙</span>
+
+            </div>
+
+
+            <div id="llama-quote">
+
+                „Flauschigkeit ist keine Schwäche.“
+
+            </div>
+
+
+            <button
+                class="quote-button"
+                id="quote-button"
+                type="button"
+            >
+                ✦ Ask the Llama ✦
+            </button>
+
+        </section>
+
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            ♡ made with glitter, questionable decisions
+            & llamas ♡
+
+            <br><br>
+
+            LamaGoddess © 2026
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- =========================================================
+         MUSIC PLAYER
+         ========================================================= -->
+
+    <div class="music-player">
+
+        <div class="music-title">
+            ♫ NOW PLAYING ♫
+        </div>
+
+        <div class="music-info">
+
+            <span>
+                LamaGoddess Radio ♡
+            </span>
+
+            <div class="music-controls">
+
+                <button
+                    id="play-button"
+                    type="button"
+                    title="Play"
+                >
+                    ▶
+                </button>
+
+                <button
+                    id="pause-button"
+                    type="button"
+                    title="Pause"
+                >
+                    ❚❚
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Hidden YouTube Player -->
+
+    <div id="youtube-player"></div>
+
+
+
+    <!-- =========================================================
+         YOUTUBE API
+         ========================================================= -->
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+
+    <script>
+
+        /* =========================================================
+           YOUTUBE MUSIC
+           ========================================================= */
+
+        let player;
+
+        let playerReady = false;
+
+        let wantsToPlay = false;
+
+
+        function onYouTubeIframeAPIReady() {
+
+            player = new YT.Player(
+                "youtube-player",
+                {
+
+                    height: "1",
+
+                    width: "1",
+
+                    videoId: "NZu2IlF87wM",
+
+                    playerVars: {
+
+                        autoplay: 0,
+
+                        controls: 0,
+
+                        disablekb: 1,
+
+                        fs: 0,
+
+                        modestbranding: 1,
+
+                        playsinline: 1,
+
+                        rel: 0,
+
+                        loop: 1,
+
+                        playlist: "NZu2IlF87wM"
+
+                    },
+
+                    events: {
+
+                        onReady: function(event) {
+
+                            playerReady = true;
+
+                            event.target.setVolume(35);
+
+                            if (wantsToPlay) {
+
+                                event.target.playVideo();
+
+                            }
+
+                        }
+
+                    }
+
+                }
+            );
+
+        }
+
+
+
+        /* =========================================================
+           ENTER PAGE
+           ========================================================= */
+
+        const enterScreen =
+            document.getElementById(
+                "enter-screen"
+            );
+
+        const enterButton =
+            document.getElementById(
+                "enter-button"
+            );
+
+
+        enterButton.addEventListener(
+            "click",
+            function() {
+
+                wantsToPlay = true;
+
+                enterScreen.classList.add(
+                    "hidden"
+                );
+
+
+                if (
+                    playerReady &&
+                    player
+                ) {
+
+                    player.playVideo();
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================================================
+           MUSIC CONTROLS
+           ========================================================= */
+
+        document
+            .getElementById("play-button")
+            .addEventListener(
+                "click",
+                function() {
+
+                    wantsToPlay = true;
+
+                    if (
+                        playerReady &&
+                        player
+                    ) {
+
+                        player.playVideo();
+
+                    }
+
+                }
+            );
+
+
+        document
+            .getElementById("pause-button")
+            .addEventListener(
+                "click",
+                function() {
+
+                    wantsToPlay = false;
+
+                    if (
+                        playerReady &&
+                        player
+                    ) {
+
+                        player.pauseVideo();
+
+                    }
+
+                }
+            );
+
+
+
+        /* =========================================================
+           LLAMA QUOTES
+           ========================================================= */
+
+        const llamaQuotes = [
+
+            "„Flauschigkeit ist keine Schwäche.“",
+
+            "„Das Lama weiß, was du getan hast.“",
+
+            "„Stay cute. Stay dangerous.“",
+
+            "„Manchmal ist Gewalt keine Lösung. Ein Lama allerdings schon.“",
+
+            "„Glitzer ist temporär. Lama ist für immer.“",
+
+            "„Do no harm. Take no shit. Pet more llamas.“",
+
+            "„Das Orakel sagt: Du brauchst mehr Pink.“",
+
+            "„Heute ist ein guter Tag, um fragwürdige Entscheidungen zu treffen.“",
+
+            "„Du wurdest vom heiligen Lama gesegnet. Wahrscheinlich.“",
+
+            "„Cute enough to fool you. Chaotic enough to regret it.“"
+
+        ];
+
+
+        const quoteElement =
+            document.getElementById(
+                "llama-quote"
+            );
+
+
+        document
+            .getElementById("quote-button")
+            .addEventListener(
+                "click",
+                function() {
+
+                    const randomQuote =
+                        llamaQuotes[
+                            Math.floor(
+                                Math.random() *
+                                llamaQuotes.length
+                            )
+                        ];
+
+                    quoteElement.textContent =
+                        randomQuote;
+
+                }
+            );
+
+
+
+        /* =========================================================
+           CURSOR SPARKLES
+           ========================================================= */
+
+        const sparkleSymbols = [
+            "✦",
+            "♡",
+            "★",
+            "✧",
+            "💖"
+        ];
+
+
+        let lastSparkle = 0;
+
+
+        document.addEventListener(
+            "mousemove",
+            function(event) {
+
+                const now =
+                    Date.now();
+
+
+                if (
+                    now - lastSparkle < 65
+                ) {
+
+                    return;
+
+                }
+
+
+                lastSparkle = now;
+
+
+                const sparkle =
+                    document.createElement(
+                        "span"
+                    );
+
+
+                sparkle.className =
+                    "sparkle";
+
+
+                sparkle.textContent =
+                    sparkleSymbols[
+                        Math.floor(
+                            Math.random() *
+                            sparkleSymbols.length
+                        )
+                    ];
+
+
+                sparkle.style.left =
+                    event.clientX + "px";
+
+
+                sparkle.style.top =
+                    event.clientY + "px";
+
+
+                document.body.appendChild(
+                    sparkle
+                );
+
+
+                setTimeout(
+                    function() {
+
+                        sparkle.remove();
+
+                    },
+                    800
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+</html>
